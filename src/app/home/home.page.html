@@ -1,0 +1,164 @@
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+       <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title align="center" style="color:white">
+        GET-METER
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <form #form="ngForm">
+      <div>
+        <div align = "center" style="margin-top: 3%">
+          <ion-label position="floating" id="dheading" style="margin-top:5%;font-size: x-large;color:white"> ENJOY YOUR TRIP WITH <br> GET-METER</ion-label>
+        </div>
+        <div style="margin-top: 10%;margin-left: 3%;margin-right: 3%; font-size:small">
+          <ion-grid style="color:white; width: 94%;height: 200%">
+              <ion-row>
+                  <ion-col style="width:20%" class="borders" >
+                      <div align="center">
+                         
+                      </div>
+                  </ion-col>
+                  <ion-col style="width:20%" class="borders">
+                      <div align="center">
+                       Rates
+                      </div>
+                  </ion-col>
+                  <ion-col style="width:24%" class="borders">
+                      <div align="center" id="firstkm">
+                       Km | Time 
+                      </div>
+                  </ion-col>
+                  <ion-col style="width:30%" class="borders">
+                      <div align="center" >
+                        Price
+                      </div>
+                  </ion-col>
+              </ion-row>
+  
+            <ion-row>
+                <ion-col style="width:20%" class="borders" >
+                    <div align="center">
+                      1 km 
+                    </div>
+                </ion-col>
+                <ion-col style="width:20%" class="borders">
+                    <div align="center">
+                     {{ oneKmDefaultPrice | currency : 'Rs. ' : 'symbol' : '1.2' }}
+                    </div>
+                </ion-col>
+                <ion-col style="width:24%" class="borders">
+                  <div align="center" id="firstkm">
+                    D / N
+                  </div>
+              </ion-col>
+                <ion-col style="width:30%" class="borders">
+                    <div align="center" >
+                     {{ oneKmPrice | currency : 'Rs. ' : 'symbol' : '1.2' }}
+                    </div>
+                </ion-col>
+            </ion-row>
+  
+            <ion-row>
+                <ion-col style="width:20%" class="borders" >
+                    <div align="center">
+                      2 km <br>+
+                    </div>
+                </ion-col>
+                <ion-col style="width:20%" class="borders">
+                    <div align="center">
+                     {{ moreKmDefaultPrice | currency : 'Rs. ' : 'symbol' : '1.2' }} / <br> 1 km
+                    </div>
+                </ion-col>
+                <ion-col style="width:24%" class="borders">
+                  <div align="center" id="secondkm" style="margin-top: 5px;">
+                      {{ moreKm || 0 }}
+                  </div>
+              </ion-col>
+                <ion-col style="width:30%" class="borders">
+                    <div align="center" id="secondamount" style="margin-top: 5px;">
+                     {{ moreKmPrice | currency : 'Rs. ' : 'symbol' : '1.2' }}
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col style="width:20%" class="borders" >
+                    <div align="center" style="margin-top: 5px;">
+                      Wait
+                    </div>
+                </ion-col>
+                <ion-col style="width:20%" class="borders">
+                    <div align="center">
+                     {{ waitTimeDefaultPrice | currency : 'Rs. ' : 'symbol' : '1.2' }} / <br> 1 min
+                    </div>
+                </ion-col>
+                <ion-col style="width:24%" class="borders">
+                    <div align="center" id="waittime" style="margin-top: 5px;">
+                      {{ waitTime | date:'HH:mm:ss' }}
+                    </div>
+                </ion-col>
+                <ion-col style="width:30%" class="borders">
+                    <div align="center" id="waitamount" style="margin-top: 5px;">
+                      {{ waitTimePrice | currency : 'Rs. ' : 'symbol' : '1.2' }}
+                    </div>
+                </ion-col>
+            </ion-row>
+            
+            <ion-row>
+                <ion-col style="width:20%" class="borders" >
+                    <div align="center">
+                      Total
+                    </div>
+                </ion-col>
+                <ion-col style="width:20%" class="borders">
+                    <div align="center">
+                     
+                    </div>
+                </ion-col>
+                <ion-col style="width:24%" class="borders">
+                    <div align="center" id="totkm">
+                      {{ totalKm }}
+                    </div>
+                </ion-col>
+                <ion-col style="width:30%" class="borders">
+                    <div align="center" id="totamount">
+                       {{ totalPrice | currency : 'Rs. ' : 'symbol' : '1.2' }}
+                    </div>
+                </ion-col>
+            </ion-row>
+            
+  
+          </ion-grid>
+          
+  
+        </div>
+  
+        <div align="center">
+          <ion-button color="success" style="margin-left: 10%;margin-top: 8%;float: left;width:35%" (click)="onStart()" [disabled]="startStatus">
+              Start
+          </ion-button>
+  
+          <ion-button color="warning" style="margin-left: 10%;margin-top: 8%;float: left;width:35%" (click)="onHold()" [disabled]="!startStatus">
+             {{ holdStatus }}
+          </ion-button>
+  
+          
+        </div>
+  
+        <div align="center">
+          <ion-button color="danger" style="margin-left: 10%;margin-top: 8%;float: left;width:80%" [disabled]="!startStatus" [routerLink]="['/trip-complete']" (click)="onStop()">
+              Complete trip
+           </ion-button>
+        </div>
+       
+              
+      </div>
+    </form>
+    
+  </ion-content>
+  

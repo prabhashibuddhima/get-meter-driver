@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" style="color:white"></ion-back-button>
+    </ion-buttons>
+    <ion-title align="center" style="color:white">
+      GET-METER
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div align="center" *ngIf="qrData" style="background-color: white; margin: 5%;">
+    <qrcode style="margin: 5%;" [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title align="center" style="color:white">
+        GET-METER
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #form="ngForm">
+     <div>
+       <div>
+          <div align = "center" style="margin-top: 3%">
+              <ion-label position="floating" id="dheading" style="margin-top:5%;font-size: x-large;color:white"> CUSTOMER RECEIPT</ion-label>
+          </div>
+
+          <div align = "center" style="margin-top:5%">
+              <ion-label class="statelabels" style="float:left;font-size:medium;margin-top: 10%;width:45%;margin-left: 3%">Total km   : </ion-label>
+              <ion-label class="statelabels" id="totkms" style="float:left;font-size:medium;margin-top: 10%;width:20% ;margin-left:4%"> {{totalKm}}  </ion-label>
+          </div>
+
+          <div align = "center" style="margin-top:5%">
+              <ion-label class="statelabels" style="float:left;font-size:medium;margin-top: 10%;width:45%;margin-left: 3%;margin-right:5%">Waiting Time   : </ion-label>
+              <ion-label class="statelabels" id="waittime" style="float:left;font-size:medium;margin-top: 10%;width:20% ">  {{ waitTime | date:'HH:mm:ss' }} </ion-label>
+          </div>
+
+          <div align = "center" style="margin-top: 10%">
+              <ion-label position="floating" style="float:left;font-size:x-large;margin-top: 10%;width:60%;margin-left: 18%;margin-right:5%;color:white" align="center"> Total amount </ion-label>
+          </div>
+          <div align = "center" style="margin-top: 3%">
+              <ion-label position="floating" id="totamount" style="margin-top:5%;font-size: xx-large;color:white;float:left;width:45%; margin-left: 25%"> {{ totalPrice | currency : 'LKR ' : 'symbol' : '1.2' }}</ion-label>
+          </div>
+
+          <div align="center">
+              <ion-button color="danger" style="margin-left: 10%;margin-top: 15%;float: left;width:80%" [routerLink]="['/customer-rate']">
+                  Collect cash
+               </ion-button>
+          </div>
+           
+
+       </div>
+     </div>
+  
+  
+  </form>
+</ion-content>

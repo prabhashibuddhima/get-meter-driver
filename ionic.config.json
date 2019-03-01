@@ -1,0 +1,8 @@
+{
+  "name": "Driver",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "9189b506"
+}

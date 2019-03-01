@@ -1,0 +1,247 @@
+
+
+<ion-content padding>
+  <form #form="ngForm" [formGroup]="regform" (ngSubmit)="registerform(form)">
+    <div>
+        <div align = "center" style="margin-top: 3%">
+             <ion-label position="floating" id="dheading" style="margin-top:5%;font-size: xx-large;color:white">GET-METER</ion-label>
+        </div>
+ 
+        <div align = "center" style="margin-top: 4%"> 
+             <ion-label position="floating" id="dtitle" style="margin-top:5%;font-size:x-large ;color:white">Sign-Up</ion-label>
+        </div>
+ 
+        <div style="margin-top: 10%;margin-left: 6%">
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Title</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="title"  placeholder="  Title" formControlName="title" [(ngModel)]="title" name="title" required> </ion-input>
+                </div>
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left" class="statelabels" required>Name </ion-label>
+                <div>
+                  <ion-input class="tbox" style="float:left; width:45%" type="text" id="firstName" placeholder="  First Name" formControlName="firstName" [(ngModel)]="firstName" name="firstName" required> </ion-input>
+                  <ion-input class="tbox" style="float:left; width:45%;margin-left: 4%" type="text" id="lastName"  placeholder="  Last Name" formControlName="lastName" [(ngModel)]="lastName" name="lastName" required> </ion-input>
+                </div>
+                 
+            </div>
+            <!--mobile country  should come here--><!--
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Mobile Country </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="country"  placeholder="  Country" formControlName="country" [(ngModel)]="country" name="country" required> </ion-input>
+                </div>
+                 
+            </div>   -->
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="middlename"  placeholder="  Middle Names" formControlName="middlename" [(ngModel)]="middlename" name="middlename"> </ion-input>
+                </div>
+                 
+            </div>
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Gender</ion-label>
+                
+                <div>
+                    <ion-select class="tbox" style="float:left; width:94%" type="text" id="gender"  placeholder="  Gender" formControlName="gender" [(ngModel)]="gender" name="gender" required>
+                        <ion-select-option value="Female">Female</ion-select-option>
+                        <ion-select-option value="Male">Male</ion-select-option>
+                    </ion-select>
+                </div>
+                 
+            </div>
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Religion</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="religion"  placeholder="  Religion" formControlName="religion" [(ngModel)]="religion" name="religion" required> </ion-input>
+                </div>
+                 
+            </div>
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Date of Birth </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Date" id="dob"  placeholder="  Date Of Birth" formControlName="dob" [(ngModel)]="dob" name="dob"  required> </ion-input>
+                </div>
+                 
+            </div>
+            
+           <!--mobile number should come here with country code--> 
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Mobile Number </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Mobile" id="mobile_phone"  placeholder="  Mobile Number" formControlName="mobile_phone" [(ngModel)]="mobile_phone" name="mobile_phone" maxlength="10" pattern="[0-9]{10}" required> </ion-input>
+                </div>
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Land Phone Number </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Mobile" id="land_phone"  placeholder="  Land Phone Number" formControlName="land_phone" [(ngModel)]="land_phone" name="land_phone" maxlength="10" pattern="[0-9]{10}"> </ion-input>
+                </div>
+                 
+            </div>
+         
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Email</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Email" id="email"  placeholder="  Email" formControlName="email" [(ngModel)]="email" name="email" required> </ion-input>
+                </div>
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">NIC</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="nic"  placeholder="  NIC" formControlName="nic" [(ngModel)]="nic" name="nic" required> </ion-input>
+                </div>
+                 
+            </div>
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">NIC Issue Date </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Date" id="nic_issue_date"  placeholder="  NIC Issue Date" formControlName="nic_issue_date" [(ngModel)]="nic_issue_date" name="nic_issue_date"> </ion-input>
+                </div>
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Billing Address</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="billing_address"  placeholder=" Billing Address" formControlName="billing_address" [(ngModel)]="billing_address" name="billing_address" required> </ion-input>
+                </div>
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Permanent Address</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="permanent_address"  placeholder=" Permanent Address" formControlName="permanent_address" [(ngModel)]="permanent_address" name="permanent_address"> </ion-input>
+                </div>
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Password</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Password" id="password"  placeholder="  Password" formControlName="password" [(ngModel)]="password" name="password" required> </ion-input>
+                </div>
+                 
+            </div>
+            <!--Language selector should come here--> <!--
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Language</ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="langauge"  placeholder="  Language" formControlName="language" [(ngModel)]="language" name="language" required> </ion-input>
+                </div>
+                 
+            </div>
+            
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <div>
+                    <ion-label style="float:left;width:60%;margin-top: 3%" class="statelabels" required>Credit Card Number </ion-label>
+                    <ion-label style="float:left;width:20%;margin-top: 3%;margin-left: 4%" class="statelabels" required>CCV </ion-label>
+                </div>
+                    
+                <div>
+                    <ion-input class="tbox" style="float:left; width:60%" type="text" id="creditno" placeholder="  Credit Card Number" formControlName="ccno" [(ngModel)]="ccno" name="ccno" required> </ion-input>
+                    <ion-input class="tbox" style="float:left; width:30%;margin-left: 4%" type="text" id="ccv"  placeholder="  CCV" formControlName="ccv" [(ngModel)]="ccv" name="ccv" required> </ion-input>
+                </div> 
+                
+                
+               
+                 
+            </div>
+
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <div>
+                    <ion-label style="float:left;width:75%;margin-top: 3%" class="statelabels" required>Expiraion Date </ion-label>
+                    
+                </div>
+                    
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Month" id="ccmonth" placeholder=" Month / Year" formControlName="ccmonth" [(ngModel)]="ccmonth" name="ccmonth" required> </ion-input>
+                    
+                </div> 
+                
+                
+               
+                 
+            </div>
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels" required>Postal Code </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="Postal" id="postcode"  placeholder="  Postal Code" formControlName="postcode" [(ngModel)]="postcode" name="postcode" required> </ion-input>
+                </div>
+                 
+            </div>
+            
+            <div style="margin-left: 3%;width:98%; margin-right: 2%;margin-top: 3%">
+                <ion-label style="float:left;margin-top: 3%" class="statelabels">Promotion Code </ion-label>
+                
+                <div>
+                    <ion-input class="tbox" style="float:left; width:94%" type="text" id="promocode"  placeholder="  Promotion Code" formControlName="promocode" [(ngModel)]="promocode" name="promocode"> </ion-input>
+                </div>
+                 
+            </div> -->
+
+            <!-- profile photo correct upload
+            <div>
+                <div>
+                    <ion-item>
+                        <p>{{imageURI}}</p>
+                        <ion-button color="secondary" (click)="getImage()">Get Image</ion-button>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label style="color:whitesmoke">Profile Photo</ion-label>
+                        <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+                      </ion-item>
+                      <ion-item>
+                        <ion-button (click)="uploadFile()">Upload</ion-button>
+                      </ion-item>
+                </div>
+            </div>  -->
+        
+            
+          <!--end of the register page details ------------------------------------------------->
+            <div align = "center" style="margin-top:5%">
+                <ion-label class="statelabels" style="float:left;margin-top: 3%">By Clicking "Register" below, you are agreeing to the GET- METER Terms and Conditions and Privacy policy.</ion-label>
+                
+            </div>
+            
+            <div padding align = "center">
+                <ion-button class="loginbutton" style="width:75%;color:whitesmoke;margin-top:6%" type="submit">Register</ion-button>
+                    
+            </div>
+
+
+         
+            
+             
+        </div>
+        
+   
+    </div>
+  </form>
+     
+ </ion-content>
+ 

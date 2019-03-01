@@ -1,0 +1,219 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center" style="color:white">
+      GET-METER
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <form #form="ngForm">
+    <div>
+      <div align="center" style="margin-top: 3%">
+        <ion-label position="floating" id="dheading" style="margin-top:5%;font-size: x-large;color:white"> Customer
+          Rating</ion-label>
+      </div>
+
+
+
+      <div style="text-align: center; margin-top: 10%">
+
+        <fieldset class="rating">
+          <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+          <label title="Rocks!" (click)='onClick(5)'></label>
+
+          <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
+          <label title="Pretty good" (click)='onClick(4)'></label>
+
+          <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+          <label title="Meh" (click)='onClick(3)'></label>
+
+          <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+          <label title="Kinda bad" (click)='onClick(2)'></label>
+
+          <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
+          <label title="Sucks big time" (click)='onClick(1)'></label>
+
+        </fieldset>
+
+        <ion-card align="center" style="margin-top: 10%">
+          <div *ngIf="isRatingOne">
+            <ion-label align="center" style="color:white;font-size: xx-large">
+              Terrible
+            </ion-label>
+            <div style="margin-top:3%">
+
+              <input type="checkbox" name="checkbox1" id="star1_drving" value="star1_drving">
+              <label for="star1_drving" style="width:40%">Driving</label>
+
+              <input type="checkbox" name="checkbox2" id="star1_prof" value="star1_prof">
+              <label for="star1_prof" style="width:50%">Professionalism</label>
+
+              <input type="checkbox" name="checkbox3" id="star1_music" value="star1_music">
+              <label for="star1_music" style="width:40%">Music</label>
+
+              <input type="checkbox" name="checkbox4" id="star1_nav" value="star1_nav">
+              <label for="star1_nav" style="width:50%">Driver Navigation</label>
+
+              <input type="checkbox" name="checkbox5" id="star1_traffic" value="star1_traffic">
+              <label for="star1_traffic" style="width:30%">Traffic</label>
+
+              <input type="checkbox" name="checkbox6" id="star1_price" value="star1_price">
+              <label for="star1_price" style="width:30%">Price </label>
+
+              <input type="checkbox" name="checkbox7" id="star1_comfo" value="star1_comfo">
+              <label for="star1_comfo" style="width:30%">Comfort</label>
+
+              <input type="checkbox" name="checkbox8" id="star1_route" value="star1_route">
+              <label for="star1_route" style="width:75%">GPS route</label>
+
+              <input type="checkbox" name="checkbox9" id="star1_other" value="star1_other">
+              <label for="star1_other" style="width:45%">Other</label>
+
+            </div>
+
+
+          </div>
+
+
+
+          <div *ngIf="isRatingTwo">
+            <ion-label align="center" style="color:white;font-size: xx-large">
+              Bad
+            </ion-label>
+            <div style="margin-top:3%">
+
+              <input type="checkbox" name="checkbox1" id="star2_drving" value="star2_drving">
+              <label for="star2_drving" style="width:40%">Driving</label>
+
+              <input type="checkbox" name="checkbox2" id="star2_prof" value="star2_prof">
+              <label for="star2_prof" style="width:50%">Professionalism</label>
+
+              <input type="checkbox" name="checkbox3" id="star2_music" value="star2_music">
+              <label for="star2_music" style="width:40%">Music</label>
+
+              <input type="checkbox" name="checkbox4" id="star2_vquality" value="star2_vquality">
+              <label for="star2_vquality" style="width:50%">Vehicle Quality</label>
+
+              <input type="checkbox" name="checkbox5" id="star2_traffic" value="star2_traffic">
+              <label for="star2_traffic" style="width:30%">Traffic</label>
+
+              <input type="checkbox" name="checkbox6" id="star2_price" value="star2_price">
+              <label for="star2_price" style="width:30%">Price</label>
+
+              <input type="checkbox" name="checkbox7" id="star2_comfo" value="star2_comfo">
+              <label for="star2_comfo" style="width:30%">Comfort</label>
+
+              <input type="checkbox" name="checkbox8" id="star2_getapp" value="star2_getapp">
+              <label for="star2_getapp" style="width:75%">GET-METER App</label>
+
+              <input type="checkbox" name="checkbox9" id="star2_other" value="star2_other">
+              <label for="star2_other" style="width:45%">Other</label>
+
+            </div>
+
+
+          </div>
+
+          <div *ngIf="isRatingThree">
+            <ion-label align="center" style="color:white;font-size: xx-large">
+              Disappointing
+            </ion-label>
+            <div style="margin-top:3%">
+
+              <input type="checkbox" name="checkbox1" id="star3_drving" value="star3_drving">
+              <label for="star3_drving" style="width:40%">Driving</label>
+
+              <input type="checkbox" name="checkbox2" id="star3_prof" value="star3_prof">
+              <label for="star3_prof" style="width:50%">Professionalism</label>
+
+              <input type="checkbox" name="checkbox3" id="star3_music" value="star3_music">
+              <label for="star3_music" style="width:40%">Music</label>
+
+              <input type="checkbox" name="checkbox4" id="star3_clean" value="star3_clean">
+              <label for="star3_clean" style="width:50%">Cleanliness</label>
+
+              <input type="checkbox" name="checkbox5" id="star3_traffic" value="star3_traffic">
+              <label for="star3_traffic" style="width:30%">Traffic</label>
+
+              <input type="checkbox" name="checkbox6" id="star3_pickup" value="star3_pickup">
+              <label for="star3_pickup" style="width:30%">Pickup</label>
+
+              <input type="checkbox" name="checkbox7" id="star3_comfo" value="star3_comfo">
+              <label for="star3_comfo" style="width:30%">Comfort</label>
+
+              <input type="checkbox" name="checkbox8" id="star3_getapp" value="star3_getapp">
+              <label for="star3_getapp" style="width:75%">GET-METER App</label>
+
+              <input type="checkbox" name="checkbox9" id="star3_other" value="star3_other">
+              <label for="star3_other" style="width:45%">Other</label>
+
+            </div>
+
+
+          </div>
+
+          <div *ngIf="isRatingFour">
+            <ion-label align="center" style="color:white;font-size: xx-large">
+              OK, But had an issue
+            </ion-label>
+            <div style="margin-top:3%">
+
+              <input type="checkbox" name="checkbox1" id="star4_drving" value="star4_drving">
+              <label for="star4_drving" style="width:40%">Driving</label>
+
+              <input type="checkbox" name="checkbox2" id="star4_prof" value="star4_prof">
+              <label for="star4_prof" style="width:50%">Professionalism</label>
+
+              <input type="checkbox" name="checkbox3" id="star4_price" value="star4_price">
+              <label for="star4_price" style="width:40%">Price</label>
+
+              <input type="checkbox" name="checkbox4" id="star4_nav" value="star4_nav">
+              <label for="star4_nav" style="width:50%">Driver Navigation</label>
+
+              <input type="checkbox" name="checkbox5" id="star4_traffic" value="star4_traffic">
+              <label for="star4_traffic" style="width:30%">Traffic</label>
+
+              <input type="checkbox" name="checkbox6" id="star4_pickup" value="star4_pickup">
+              <label for="star4_pickup" style="width:30%">Pickup</label>
+
+              <input type="checkbox" name="checkbox7" id="star4_clean" value="star4_clean">
+              <label for="star4_clean" style="width:50%">Cleanliness</label>
+
+              <input type="checkbox" name="checkbox8" id="star4_route" value="star4_route">
+              <label for="star4_route" style="width:75%">GPS route</label>
+
+              <input type="checkbox" name="checkbox9" id="star4_other" value="star4_other">
+              <label for="star4_other" style="width:45%">Other</label>
+
+            </div>
+
+
+          </div>
+
+          <div *ngIf="isRatingFive">
+            <ion-label align="center" style="color:white;font-size: xx-large">
+              Great!!
+            </ion-label>
+            <div style="margin-top:3%">
+              <ion-textarea class="tbox" placeholder="Give A Complement">
+
+              </ion-textarea>
+
+
+            </div>
+
+
+          </div>
+        </ion-card>
+
+      </div>
+
+      <div padding align="center">
+        <ion-button style="width:60%;color:whitesmoke" type="submit">Done</ion-button>
+
+      </div>
+
+    </div>
+  </form>
+</ion-content>

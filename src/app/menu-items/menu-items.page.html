@@ -1,0 +1,37 @@
+<ion-split-pane>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons color="primary">
+          <ion-title> {{email}}</ion-title>
+         
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-icon color="light" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label color="light">
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+    <ion-footer>
+      <ion-buttons slot="end">
+        <ion-button color="primary" (click)="logout()">
+          <ion-icon slot="start" name="exit"></ion-icon>
+          logout
+        </ion-button>
+      </ion-buttons>
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
+
+</ion-split-pane>
